@@ -1,0 +1,20 @@
+<table border="1px">
+  <tr>
+    <td>Id</td>
+    <td>Primer nombre</td>
+    <td>Estado</td>
+  </tr>
+  {% for user in users %}
+    <tr>
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>
+        {% if user.is_active %}
+          <input onclick="cambioEstado('{% url 'cambioEstado' estado=0 usuario=user.id%}')" type="checkbox" checked></input>
+        {% else %}
+          <input onclick="cambioEstado('{% url 'cambioEstado' estado=1 usuario=user.id%}')" type="checkbox"></input>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>

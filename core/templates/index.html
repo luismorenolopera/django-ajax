@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+  <div id="demo">
+
+  </div>
+
+  <button onclick="cargar('{% url 'usuarios' %}')" type="button" name="button">Cargar tabla</button>
+  <br><br>
+
+  <input type="text" name="nombre" value="" placeholder="Nombre">
+  <input type="password" name="clave" value="" placeholder="Clave">
+  <button onclick="agregarUsuario()" type="button" name="button">Agregar Usuario</button>
+{% endblock %}
